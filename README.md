@@ -27,9 +27,8 @@ class CameraIntentActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
     ```
 ```
-//NOTE NO NEED TO DO THIS
-//        imageView = findViewById(R.id.imageView)
-```
+        //NOTE NO NEED TO DO THIS
+    //        imageView = findViewById(R.id.imageView)
 
 ```
 //NOTE - i can directly refer the id of XML file imageView
