@@ -30,6 +30,7 @@ class CameraIntentActivity : AppCompatActivity() {
 //NOTE NO NEED TO DO THIS
 //        imageView = findViewById(R.id.imageView)
 ```
+
 ```
 //NOTE - i can directly refer the id of XML file imageView
         imageView.setOnClickListener {
@@ -58,6 +59,7 @@ class CameraIntentActivity : AppCompatActivity() {
          */
         println("onActivityResult  requestCode$requestCode resultCode $resultCode data $data");
 ```
+
 ```
  //note
     /**
@@ -77,4 +79,5 @@ class CameraIntentActivity : AppCompatActivity() {
         private val REQ_RESULT_CODE_CAMERA = 2
     }
 ```
+
 
