@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Camerakotlin/Camerakotlin.iml" filepath="$PROJECT_DIR$/Camerakotlin/Camerakotlin.iml" />
       <module fileurl="file://$PROJECT_DIR$/Taking-Photo-Camera-Android.iml" filepath="$PROJECT_DIR$/Taking-Photo-Camera-Android.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
