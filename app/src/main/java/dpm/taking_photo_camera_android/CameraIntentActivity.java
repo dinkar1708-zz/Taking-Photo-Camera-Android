@@ -31,7 +31,9 @@ public class CameraIntentActivity extends AppCompatActivity {
     private static final int MY_PERMISSIONS_REQUEST_OPEN_CAMERA = 10;
     private static final int REQ_RESULT_CODE_CAMERA = 2;
 
+    // this is the file URI where image is stored
     private Uri fileUri;
+    // image view
     private ImageView imageView;
 
     private TextView imagePath;
@@ -49,6 +51,7 @@ public class CameraIntentActivity extends AppCompatActivity {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //checking for write permission
                 if (ContextCompat.checkSelfPermission(CameraIntentActivity.this,
                         Manifest.permission.WRITE_EXTERNAL_STORAGE)
                         != PackageManager.PERMISSION_GRANTED) {
@@ -106,6 +109,13 @@ public class CameraIntentActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * after taking picture using camera this method is invoked in activity
+     *
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -120,7 +130,12 @@ public class CameraIntentActivity extends AppCompatActivity {
             Log.i(TAG, "FILE URI>>>>>>>> " + fileUri + " get data ");
             switch (requestCode) {
                 case REQ_RESULT_CODE_CAMERA:
-
+                    /*
+                    setting image on image view using google glide library
+                    this library is recommended by google
+                    https://inthecheesefactory.com/blog/get-to-know-glide-recommended-by-google/en
+                    image can be set by decoding from file as well
+                     */
                     Glide.with(CameraIntentActivity.this).load(fileUri)
                             .thumbnail(1f)
                             .into(imageView);
@@ -135,6 +150,9 @@ public class CameraIntentActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * custom method to open camera using intent
+     */
     private void openCameraTakePicture() {
 
         File photo = Utils
